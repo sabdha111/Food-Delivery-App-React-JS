@@ -21,14 +21,14 @@ header {
 
 .header-contents h2 {
   font-weight: 500;
-  color: #fff;
+  color: #0e0d0d;
   font-size: max(3.9vw, 22px);
   text-shadow: 4px 4px 4px #00000030;
 }
 
 .header-contents p {
   text-align: justify;
-  color: #fff;
+  color: #161616;
   font-size: 1vw;
   text-shadow: 2px 2px 2px #00000030;
 }

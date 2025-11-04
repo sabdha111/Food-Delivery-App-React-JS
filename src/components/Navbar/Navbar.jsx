@@ -7,14 +7,17 @@ import { Link } from "react-router-dom";
 const Navbar = ({ setShowLogin }) => {
   const { getTotalQuantity } = useContext(StoreContext);
   const totalQuantity = getTotalQuantity();
-
   const [menu, setMenu] = useState("home");
 
   return (
     <div className="navbar">
-      <Link to="/">
-        <img src={assets.logo} alt="logo" className="logo" />
+      {/* Logo + Brand Name */}
+      <Link to="/" className="navbar-logo">
+        <img src={assets.logo} alt="Foodify logo" className="logo" />
+        <span className="brand-name">🍴 Foodify</span>
       </Link>
+
+      {/* Menu Links */}
       <ul className="navbar-menu">
         <Link
           to="/"
@@ -45,8 +48,11 @@ const Navbar = ({ setShowLogin }) => {
           Contact Us
         </a>
       </ul>
+
+      {/* Right Section */}
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="search_icon" />
+        <img src={assets.search_icon} alt="search_icon" className="search-icon" />
+
         <div className="navbar-basket-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} alt="basket_icon" />
@@ -55,10 +61,14 @@ const Navbar = ({ setShowLogin }) => {
             <p>{totalQuantity}</p>
           </div>
         </div>
-        <button onClick={() => setShowLogin(true)}>Sign in</button>
+
+        <button onClick={() => setShowLogin(true)} className="signin-btn">
+          Sign in
+        </button>
       </div>
     </div>
   );
 };
 
 export default Navbar;
+
